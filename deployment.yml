@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emp1-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emp1
+  template:
+    metadata:
+      name: emp1-pod
+      labels:
+        app: emp1
+    spec:
+      containers:
+        - name: emp1-container
+          image: gopal1409/chatapp
+          ports:
+           - containerPort: 8080
+
